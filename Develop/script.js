@@ -3,18 +3,26 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  // var passwordChar = "";
+  var passwordlength = 8;
+  var password = "";
+  lowerCharacters = "abcdefghijklmnopqrstuvwsyx";
+  // upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  // pwnumbers = "";
+  // specialCharacters = "!@#$%^&*()_+{}|:<>?-=[]\;'',./;";
+  // var lowerCharactersCheck = document.getElementById("LowerCharacters");
+
+  // if (lowerCharactersCheck.checked == true) {
+
+  // }
+
 
   //Generate number for value
-  for (var pc = 0; pc < 1; pc++) {
-    var num = Math.random() * 10;
-    var num2 = Math.floor(num);
-    console.log(num2)
+  for (var i = 0, n = lowerCharacters.length; i < passwordlength; ++i) {
+    password += lowerCharacters.charAt(Math.floor(Math.random() * n));
   }
-
-  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  // Changed this value to num2 for now.
-  passwordText.value = num2;
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
