@@ -42,7 +42,6 @@ function copyToClipboard() {
   copyPassword.select();
   copyPassword.setSelectionRange(0, 99999)
   document.execCommand("copy");
-  alert("Text has been copied!");
 }
 
 // Here are a series of functions that get the users longitude and lattitude coordinates.
