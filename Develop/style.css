@@ -14,7 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #a7a7a7;
 }
 
 .wrapper {
@@ -38,6 +38,8 @@ header {
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   max-width: 800px;
   padding: 30px 40px;
 }
@@ -62,7 +64,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #7b7c7e;
   height: 2px;
 }
 
@@ -74,7 +76,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: orange;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -86,6 +88,18 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+}
+
+.btn:hover, #copytext:hover {
+  background-color: darkgray;
+}
+
+.btn:active, #copytext:active {
+  background-color: rgb(85, 82, 82);
+}
+
+#copytext {
+  background-color: rgb(11, 8, 175);
 }
 
 button[disabled] {
@@ -116,6 +130,10 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+}
+
+.useInfo {
+  font-size: 18px;
 }
 
 @media (max-width: 690px) {
