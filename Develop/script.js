@@ -95,7 +95,6 @@ function promptPassword() {
     // After the password is generated, it is then stored in the password element on the HTML doc.
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
-    alert("Congratulations! Your password has been generated.")
   }
 }
 // Add event listener to generate button
