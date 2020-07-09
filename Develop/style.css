@@ -123,6 +123,7 @@ button[disabled] {
   float: right;
 }
 
+/* ----------------------------------------- */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -142,6 +143,15 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+}
+/* ----------------------------------------- */
+
+.passwordTextAreaHide {
+  -webkit-text-security: disc !important;
+}
+
+.passwordTextAreaShow {
+  -webkit-text-security: none;
 }
 
 .useInfo {

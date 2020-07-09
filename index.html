@@ -35,16 +35,15 @@
           <label for="specialCharacters"> Inlclude Special Characters like "!@#$%^&*()"</label><br><br>
         <div class="card-body">
           <!-- Password Element -->
-          <!-- Element was changed to input instead of teaxtfield so that the value can be hidden. -->
-          <!-- NOTE: Value cannot be copied when the type is set to password. -->
-          <input
+          <!-- Element is hidden unless user pushed the ReavealConcealPasswordButton -->
+          <!-- NOTE: Value can be copied when the type is set to password. See copyToClipboard() function. -->
+          <textarea
             readonly
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
-            type="password"
-            class="passwordTextArea"
-          ></input>
+            class="passwordTextAreaHide"
+          ></textarea>
         </div>
         <div class="card-footer">
           <!-- Button that generates password -->
@@ -53,7 +52,7 @@
           <button id="ReavealConcealPasswordButton" class="btn" onclick="ReavealConcealPassword()">Show Password</button>
           <!-- Button that copies password to the user clipbaord. This button hids unless you click on the ReavealConcealPasswordButton above. -->
           <!-- The password's type must be changed to "text" in order for this button to appear. -->
-          <button id="copytext" class="btn" onclick="copyToClipboard()" style="display:none">Copy Password To Clipboard</button>
+          <button id="copytext" class="btn" onclick="copyToClipboard()">Copy Password To Clipboard</button>
         </div>
       </div>
       <div class="card">

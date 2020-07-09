@@ -219,14 +219,25 @@ function generatePassword() {
 
 
 //////////////////// COPY TO CLIPBOARD FUNCTION ////////////////////
-// Copy to clipboard function
-// This method demonstractes using the onClick feature I mentioned earlier.
+// This function copys the password from the text area to the clipboard, even if the password is hidden.
 // By clicking this button, this function copies the text from the password element to the user's clipboard. 
+// If the text area is under the passwordTextAreaHide class then it will just copy a bunch of "••••••••••••" characters.
+// To fix this the function briefly changes the class to passwordTextAreaShow, copies the text, 
+// then changes the class back to passwordTextAreaHide class. This happens fast enough that the password does not reveal itself when copied.
+// This alse method demonstractes using the onClick feature I mentioned earlier.
 function copyToClipboard() {
   var copyPassword = document.getElementById("password");
-  copyPassword.select();
-  copyPassword.setSelectionRange(0, 99999)
-  document.execCommand("copy");
+  if (copyPassword.className === "passwordTextAreaHide") {
+    copyPassword.className = "passwordTextAreaShow"
+    copyPassword.select();
+    copyPassword.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    copyPassword.className = "passwordTextAreaHide"
+  } else {
+    copyPassword.select();
+    copyPassword.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+  }
 }
 
 
@@ -234,22 +245,19 @@ function copyToClipboard() {
 
 
 //////////////////// REVEAL CONCEAL PASSWORD FUNCTION ////////////////////
-// This function hides and reveals the password as needed. It also changes the input type into a type that can be copied to the clipboard
-// To accomplish this, I had to hide the password by changing the element into an input and by changing the type into a password.
-// I originally wanted to be able to hide the password and then copy it. But I can't do that since you can't copy a input with password type.
-// There were other ways of hiding a text area like how you would for a password input but I could not figure out how.
+// This function hides and reveals the password as needed.
+// To accomplish this, the function changes the class from passwordTextAreaHide to passwordTextAreaShow and visa versa.
+// passwordTextAreaHide hides the password and passwordTextAreaShow reveals the password to the user.
+// This can be important for security purposes. You don't want others behind you to see the password.
 function ReavealConcealPassword() {
   var passwordtext = document.getElementById("password")
-  var copytextbutton = document.getElementById("copytext")
   var ReavealConcealPasswordButton = document.getElementById("ReavealConcealPasswordButton")
-  if (passwordtext.type === "password") {
-    passwordtext.type = "text";
+  if (passwordtext.className === "passwordTextAreaHide") {
+    passwordtext.className = "passwordTextAreaShow";
     ReavealConcealPasswordButton.innerHTML = "Hide Password";
-    copytextbutton.style.display = "block";
-  } else {
-    passwordtext.type = "password";
+  } else if (passwordtext.className === "passwordTextAreaShow") {
+    passwordtext.className = "passwordTextAreaHide";
     ReavealConcealPasswordButton.innerHTML = "Show Password";
-    copytextbutton.style.display = "none";
   }
 }
 
@@ -258,10 +266,10 @@ function ReavealConcealPassword() {
 
 
 //////////////////// DISPLAY USER OPERATING SYSTEM ////////////////////
-// Determines User Operating system
-// Something I found on stack overflow. It's the simplest method I could find.
-// This works because it is able to figure out that I'm on Windows OS. 
-// This most certainly will not work on mobile devices as it only workes for Windows Mac or Lunix/Unix users.
+// Determines User Operating system and displays it to them on their screen.
+// Something I found on stack overflow. It's the simplest method I could find for accomplishing this.
+// This works because it is able to figure out that I'm on Windows. I have not tested other OSs however. 
+// I don't think it will work on mobile devices as it is built for Windows Mac or Lunix/Unix users.
 var UserOperatingSystem="Unknown OS";
 if (navigator.appVersion.indexOf("Win")!=-1) UserOperatingSystem="Windows";
 if (navigator.appVersion.indexOf("Mac")!=-1) UserOperatingSystem="MacOS";
@@ -284,7 +292,7 @@ if (navigator.geolocation) {
   UserLocation.innerHTML = "Cannot obtain geolocation for some reason.";
 }
 // You can expand this function based on where there are in the world.
-// You can even get there city state or even address. But that's just extra work.
+// You can even get there city state or even address. But that's just extra work for now.
 // If the User's longitude is more the -100 then they are on the east side of US. 
 // If it it less the -100 then they are westerners like Colorado.
 function showPosition(position) {
