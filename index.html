@@ -16,32 +16,48 @@
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
+          <!-- We were supposed to check for these values via an alert message but I thought that was way too easy. -->
+          <!-- This design is much more user firendly. -->
+          <!-- Add a selector for the password length. -->
+          <label for="passwordlength">Length of Password (Between 3 and 100) : </label>
+          <input type="number" id="passwordlength" min="8" max="128" value="12"><br>
           <!-- Include Lower Character Checkbox -->
-          <input type="checkbox" id="LowerCharacters">
+          <input checked type="checkbox" id="LowerCharacters">
           <label for="LowerCharacters"> Include Lowercase Letters</label><br>
           <!-- Include Upper Character Checkbox -->
-          <input type="checkbox" id="UpperCharacters" name="UpperCharacters" value="UpperCharacters">
+          <input type="checkbox" id="UpperCharacters">
           <label for="UpperCharacters"> Include Upercase Letters</label><br>
           <!-- Include Numbers Checkbox -->
-          <input type="checkbox" id="pwnumbers" name="pwnumbers" value="pwnumbers">
-          <label for="pwnumbers"> Include Numbers</label><br><br>
+          <input checked type="checkbox" id="pwnumbers">
+          <label for="pwnumbers"> Include Numbers</label><br>
           <!-- Include Special Characters Checkbox -->
-          <input type="checkbox" id="specialCharacters" name="specialCharacters" value="specialCharacters">
+          <input type="checkbox" id="specialCharacters">
           <label for="specialCharacters"> Inlclude Special Characters like "!@#$%^&*()"</label><br><br>
         <div class="card-body">
-          <textarea
+          <!-- Password Element -->
+          <!-- Element was changed to input instead of teaxtfield so that the value can be hidden. -->
+          <!-- NOTE: Value cannot be copied when the type is set to password. -->
+          <input
             readonly
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
-          ></textarea>
+            type="password"
+            class="passwordTextArea"
+          ></input>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-          <button id="copytext" class="btn" onclick="copyToClipboard()">Copy Password To Clipboard</button>
+          <!-- Button that generates password -->
+          <button id="generate" class="btn" onclick="generatePassword()">Generate Password</button>
+          <!-- Button that reveals password -->
+          <button id="ReavealConcealPasswordButton" class="btn" onclick="ReavealConcealPassword()">Show Password</button>
+          <!-- Button that copies password to the user clipbaord. This button hids unless you click on the ReavealConcealPasswordButton above. -->
+          <!-- The password's type must be changed to "text" in order for this button to appear. -->
+          <button id="copytext" class="btn" onclick="copyToClipboard()" style="display:none">Copy Password To Clipboard</button>
         </div>
       </div>
       <div class="card">
+        <!-- This card displays the user's info like coordinates and operating system. -->
         <div class="card-header">
           <h2>User Information</h2>
         </div>
@@ -50,6 +66,10 @@
           <h2 id="UserLocation" class="useInfo"></h2>
           <h2 id="UserHemisphere" class="useInfo"></h2>
         </div>
+      </div>
+      <!-- Button that starts a prompt window loop that generates a password. -->
+      <div class="card">
+        <button id="passwordprompt" class="btn">Click this button to generate password via prompt.</button>
       </div>
     </div>
     <script src="Develop/script.js"></script>

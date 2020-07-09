@@ -78,28 +78,40 @@ header {
   border: none;
   background-color: orange;
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  /* Margin was changed so I could stack more buttons on the page and have them center align. */
+  /* margin: 16px 16px 16px 20px; */
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 25%;
+  margin-right: 25%;
   padding: 14px 34px;
-  text-align: center;
   cursor: pointer;
+  outline: none;
 }
 
-.btn:hover, #copytext:hover {
+.btn:hover, #copytext:hover, #passwordprompt:hover, #ReavealConcealPasswordButton:hover {
   background-color: darkgray;
 }
 
-.btn:active, #copytext:active {
+.btn:active, #copytext:active, #passwordprompt:active, #ReavealConcealPasswordButton:active {
   background-color: rgb(85, 82, 82);
 }
 
 #copytext {
   background-color: rgb(11, 8, 175);
+}
+
+#passwordprompt {
+  background-color: red;
+}
+
+#ReavealConcealPasswordButton {
+  background-color: green;
 }
 
 button[disabled] {
@@ -135,6 +147,7 @@ button[disabled] {
 .useInfo {
   font-size: 18px;
 }
+
 
 @media (max-width: 690px) {
   .btn {
