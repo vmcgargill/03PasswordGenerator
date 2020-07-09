@@ -14,6 +14,7 @@ body,
 
 body {
   font-family: sans-serif;
+  /* Changed the background color to a7a7a7. */
   background-color: #a7a7a7;
 }
 
@@ -64,6 +65,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
+  /* Changed the background color a little but to make it darker. */
   background: #7b7c7e;
   height: 2px;
 }
@@ -94,6 +96,7 @@ header {
   outline: none;
 }
 
+/* These classes and ids make it so that the buttons change color when you hover and click on them. */
 .btn:hover, #copytext:hover, #passwordprompt:hover, #ReavealConcealPasswordButton:hover {
   background-color: darkgray;
 }
@@ -102,14 +105,17 @@ header {
   background-color: rgb(85, 82, 82);
 }
 
+/* The color for the copy text button. */
 #copytext {
   background-color: rgb(11, 8, 175);
 }
 
+/* The color for the password prompt button. */
 #passwordprompt {
   background-color: red;
 }
 
+/* The color for the reveal/conceal password button. */
 #ReavealConcealPasswordButton {
   background-color: green;
 }
@@ -123,7 +129,7 @@ button[disabled] {
   float: right;
 }
 
-/* ----------------------------------------- */
+/* These setting must stay the same even if the element class is changed. */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -144,12 +150,13 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
-/* ----------------------------------------- */
 
+/* This class hides the password */
 .passwordTextAreaHide {
   -webkit-text-security: disc !important;
 }
 
+/* This class shows the user the password */
 .passwordTextAreaShow {
   -webkit-text-security: none;
 }
