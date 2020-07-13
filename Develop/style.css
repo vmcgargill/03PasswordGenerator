@@ -14,8 +14,8 @@ body,
 
 body {
   font-family: sans-serif;
-  /* Changed the background color to a7a7a7. */
-  background-color: #a7a7a7;
+  /* Changed the background color to classic silver. */
+  background-color: silver;
 }
 
 .wrapper {
@@ -33,9 +33,6 @@ header {
 
 .card {
   background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
   margin: 0 auto;
@@ -43,6 +40,12 @@ header {
   margin-bottom: 30px;
   max-width: 800px;
   padding: 30px 40px;
+  border: 6px;
+  border-width: 100%;
+  border-color: rgb(30, 30, 97); 
+  border-style: solid;
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 0 0 15px 2px;
 }
 
 .card-header::after {
