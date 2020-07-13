@@ -1,5 +1,4 @@
-//////////////////// INITIAL ALERT MESSAGE ////////////////////
-alert("Be sure to click on the green Show Password button. It will reveal your password and make it available to copy the password to your clipboard.")
+//////////////////// ASSIGNMENT CODE ////////////////////
 // Here is the querySelector given to us by the instructor that listens for the generate button click.
 // There are other methods of doing this. I prefer the onClick method. But I demonstrate both on this assignment.
 var generateBtn = document.querySelector("#passwordprompt");
@@ -8,7 +7,6 @@ var generateBtn = document.querySelector("#passwordprompt");
 
 
 
-//////////////////// ASSIGNMENT CODE ////////////////////
 // Write password to the #password input
 // I did this project while using inputs such as checkboxs for constraints on the password. Instead of pop window pronmps.
 // I was not sure id I would get marked dow for that. So I just did both the alerts and inputs.
