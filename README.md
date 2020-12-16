@@ -1,5 +1,4 @@
-# 03 JavaScript: Password Generator
-
+# Password Generator
 
 ## Develope/Scripts.js
 
